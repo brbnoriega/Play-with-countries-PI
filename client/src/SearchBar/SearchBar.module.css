@@ -1,0 +1,29 @@
+.search{
+    width: 40%;
+    border-radius: 26px;
+    border: 1px solid #ada9a9;
+    padding: 1% 8%;
+    margin: 1% 1%;
+    background-image: url(https://www.pngarea.com/tpl/img/search-mob.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    outline: 0;
+    background-position: 12px;
+    background-size: 30px;
+     text-align: center;
+     font-size: 25px;
+    }
+
+    .icon{
+        height: 100%;
+        width: 200px;
+        border:none;
+        outline: none;
+        
+    }
+
+
+
+
+
+  

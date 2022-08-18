@@ -1,0 +1,23 @@
+.cardHome{ 
+
+    /* RESPONSIVE */
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-gap: 2rem;
+    margin-block: 2rem;
+    padding: 0 1rem;
+    justify-items: center;
+    align-items: center;
+
+}
+
+.sort{
+   
+    text-align: center;
+}
+
+.filter{
+    text-align: center;
+}
+

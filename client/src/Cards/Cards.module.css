@@ -1,0 +1,66 @@
+
+.card {
+
+
+	display: grid;
+	 
+
+	align-items: center;
+	justify-items: center;
+
+
+	width: 320px;
+	height: 330px;
+	background: rgba(217, 217, 217, 0.17);
+	border-radius: 65px;
+	transform: rotate(0.42deg);
+	
+
+
+	/* display: inline-block;
+
+
+	height: 300px;
+	max-width: 20%;
+	margin: 10px;
+
+	text-decoration: none;
+	overflow: hidden;
+	box-shadow: 0 0 3rem -1rem rgba(0,0,0,0.5);
+	transition: transform 0.1s ease-in-out, box-shadow 0.1s; */
+}
+
+.card:hover {
+	transform: translateY(-0.5rem) scale(1.0125);
+	
+} 
+
+
+.img{
+    border-radius: 15px;
+	position: fixed;
+    height: 150px;
+    width: 270px;
+
+} 
+
+.font{
+	position:absolute;
+	text-align: center;
+
+	padding-left: 30px;
+	padding-right: 30px;
+	top: 3%;
+	
+
+}
+
+.fontContinent{
+	position:absolute;
+	text-align: center;
+
+	padding-left: 30px;
+	padding-right: 30px;
+	bottom: 1%;
+
+}
