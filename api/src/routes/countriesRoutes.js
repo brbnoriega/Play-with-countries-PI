@@ -16,7 +16,7 @@ const countriesRoutes = Router();
         return{
             id: restMap.cca3,
             name: restMap.name.common,
-            imgFlag: restMap.flags[1],
+            imgFlag: restMap.flags[2],
             continent: restMap.continents[0],
             capital: restMap.capital ? restMap.capital[0] : "Without Capital",
             subregion: restMap.subregion,
