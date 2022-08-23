@@ -1,11 +1,14 @@
 import axios from 'axios';
-
 export const GET_COUNTRIES = 'GET_COUNTRIES';
 export const ERROR = 'ERROR';
 export const GET_NAMES_COUNTRIES = 'GET_NAMES_COUNTRIES';
 export const SORT_COUNTRIES = 'SORT_COUNTRIES';
 export const FILTER_CONTINENTS = 'FILTER_CONTINENTS';
-
+export const SORT_POPULATION = 'SORT_POPULATION';
+export const FILTER_BY_ACT = 'FILTER_BY_ACT';
+export const GET_ACTIVITIES= 'GET_ACTIVITIES';
+export const GET_DETAILS = 'GET_DETAILS';
+export const CLEAN_DETAIL= 'CLEAN_DETAIL';
 
 export function getCountries(){
     return async function(dispatch){ 
@@ -59,3 +62,43 @@ export function filterContinent(payload){
       payload
     }
   }
+
+//-----sort population
+
+export function sortPopulation(payload){
+return{
+    type: SORT_POPULATION,
+    payload
+}
+}
+
+//------filter actdb
+export function filterByActDb (payload){
+    return{
+        type: FILTER_BY_ACT,
+        payload
+    }
+}
+
+//----detail-----
+export function getDetail(id){
+
+     return async function(dispatch){
+                    try{
+                        var localHostId = await axios.get('http://localhost:3001/countries/' + id);
+                        return dispatch({
+                            type: GET_DETAILS,
+                            payload: localHostId.data
+                        })
+                    }catch(error){
+                    console.log(error)
+                }
+                }
+            }
+//-----cleanDetail----
+export function cleanDetail (payload){
+    return{
+        type: CLEAN_DETAIL,
+        payload
+    }
+}

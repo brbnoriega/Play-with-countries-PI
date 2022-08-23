@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+
 import {useDispatch} from 'react-redux';
 import {Link} from 'react-router-dom';
 import { getCountries} from '../actions/index.js';
@@ -11,7 +11,7 @@ export default function Navbar() {
   const dispatch = useDispatch()
   
 
-  //---reload---
+  // ---reload---
   function handleReload(e){
     e.preventDefault(); // para que no se recargue la pag
     dispatch(getCountries());
@@ -20,8 +20,11 @@ export default function Navbar() {
 
   return (
  <div className={styles.navbar}>
-   <Link to = '/countries'> <button className={styles.reload} onClick= {e=> {handleReload(e)}}> reload </button> </Link>
+   <Link to = '/activities'> 
+   <button className={styles.reload} onClick= {e=> {handleReload(e)}}> reload </button> 
 
+    <button className={styles.reload}> Create </button> 
+            </Link>
   <SearchBar/>
 
 

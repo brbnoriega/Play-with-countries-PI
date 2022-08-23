@@ -9,15 +9,53 @@
     padding: 0 1rem;
     justify-items: center;
     align-items: center;
+  
 
 }
 
-.sort{
+/* .sort{
    
     text-align: center;
 }
 
 .filter{
     text-align: center;
+} */
+
+/* body {
+    background:#2d2d2d;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-wrap:wrap;
+    padding:0;
+    margin:0;
+    height:100vh;
+    width:100vw;
+    font-family: sans-serif;
+    color:#FFF;
+  } */
+
+  
+  .optionStyle {
+  
+  
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-gap: 2rem;
+    margin-block: 2rem;
+    padding: 0 1rem;
+    justify-items: center;
+    align-items: center;
+  
 }
 
+    
+  
+  
+
+
+  
+
+  
+ 

@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Inconsolata:wght@200;400&family=Montserrat:ital,wght@0,100;1,100&family=Silkscreen&display=swap');
+.boxForm{
+    display: grid;
+	align-items: center;
+	justify-items: center;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-bottom: 60%;
+	width: 320px;
+	height: 330px;
+	background: rgba(217, 217, 217, 0.17);
+	
+
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #666666;
+    width: 500px;
+   
+}
+
+.title{
+    font-family: 'Aboreto', cursive;
+    margin-left: 43%;
+}
+
+.subtitle{
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 44%;
+  
+}
+
+
+
+
