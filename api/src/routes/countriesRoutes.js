@@ -77,7 +77,7 @@ countriesRoutes.get('/countries', async(req,res)=>{
 // Debe traer solo los datos pedidos en la ruta de detalle de país
 // Incluir los datos de las actividades turísticas correspondientes
 
-countriesRoutes.get('/:id', async(req,res)=>{
+countriesRoutes.get('/countries/:id', async(req,res)=>{
 
     const {id} = req.params;
 

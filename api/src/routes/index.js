@@ -12,7 +12,7 @@ const router = Router();
 
 
 router.get('/countries', countriesRoutes);
-router.get('/:id', countriesRoutes);
+router.get('/countries/:id', countriesRoutes);
 
 router.post('/', activityRouter);
 
