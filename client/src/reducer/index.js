@@ -1,4 +1,4 @@
-import {GET_COUNTRIES, ERROR, GET_NAMES_COUNTRIES, SORT_COUNTRIES, FILTER_CONTINENTS, SORT_POPULATION, GET_DETAILS, CLEAN_DETAIL } from '../actions/index.js';
+import {GET_COUNTRIES, ERROR, GET_NAMES_COUNTRIES, SORT_COUNTRIES, FILTER_CONTINENTS, SORT_POPULATION, GET_DETAILS, CLEAN_DETAIL, POST_ACTIVITIES, GET_ACTIVITIES, FILTER_ACTIVITIES } from '../actions/index.js';
 
 //un estado inicial
 const initialState = {
@@ -6,6 +6,7 @@ const initialState = {
     allCountries: [],
     error: '',
     detail: [],
+    activities: [],
 }
 
 function rootReducer(state = initialState, action){
@@ -99,6 +100,34 @@ function rootReducer(state = initialState, action){
             detail: action.payload
         }
     }
+    case POST_ACTIVITIES:
+            return{
+                ...state,
+            }
+
+
+    case GET_ACTIVITIES:
+        return{
+            ...state,
+            activities: action.payload
+        }
+
+        case FILTER_ACTIVITIES: 
+            const filterAct =  action.payload === 'activities'
+            ? state.allCountries
+            : state.allCountries.filter(
+                (filter) =>
+                filter.activities &&
+                filter.activities.filter((act) => act.name === action.payload).length
+              )
+          
+            return{
+                ...state,
+                countries: filterAct
+            }
+
+
+
     default:
     return state;
 }

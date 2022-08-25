@@ -1,17 +1,24 @@
+.background{
+    background-color: rgb(63, 61, 61);
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
 .search{
     width: 40%;
     border-radius: 26px;
     border: 1px solid #ada9a9;
     padding: 1% 8%;
-    margin: 1% 1%;
+  
     background-image: url(https://www.pngarea.com/tpl/img/search-mob.png);
     background-size: contain;
     background-repeat: no-repeat;
     outline: 0;
     background-position: 12px;
     background-size: 30px;
-     text-align: center;
-     font-size: 25px;
+    text-align: center;
+    font-size: 25px;
     }
 
     .icon{
@@ -20,6 +27,30 @@
         border:none;
         outline: none;
         
+    }
+
+    .buttonStyle{
+        width: 18%;
+        border-radius: 22px;
+        border: 1px solid #ada9a9;
+        padding: 1% 4%;
+        margin: 1% 1%;
+        outline: 0;
+        background-position: 5px;
+        background-size: 1px;
+         text-align: center;
+         background-color: rgb(253, 252, 252);
+         font-size: 25px;
+        /* color: #2b2e2e69;
+        background-color:rgba(255, 255, 255, 0.116);
+        border:1px solid rgb(226, 212, 212);    
+        height:100px;
+       
+        -moz-border-radius:30%;
+        -webkit-border-radius:30%;
+        width:100px;
+        margin-left: 20px;
+        border-radius: 50px; */
     }
 
 

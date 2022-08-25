@@ -31,7 +31,7 @@ console.log(countries)
 return(
 <div> 
 
-<Link to= '/home'><button className={styles.button}>⟵ Back</button></Link> <br />
+<Link to= '/home'><button className={styles.button}>⟵</button></Link> <br />
 { Object.keys(countries).length > 0 ? 
 
 //Object.keys: para comprobar si el objeto tiene alguna clave. Si la longitud de las claves es cero, entonces está vacío; de lo 
@@ -47,7 +47,13 @@ return(
                 <h3>Subregion: {countries.subregion}</h3> 
                 <h3>Area: {countries.area > 1000000 ? countries.area / 1000000  + ' millions of km²' : countries.area + ' km²'}</h3> 
                 <h3>Population: {countries.population > 1000000 ? formatNumber(countries.population /1000000) + ' millions of inhabitants' : formatNumber(countries.population) + " inhabitants" }</h3> 
+              <h3>Activities:</h3>
+                    
+{                   countries.activities.length > 0 ? countries.activities.map(actmap=> 
+                    (<h4>{actmap.name}</h4> )
+                   ): 'Without activities'   } 
 
+                     
 </div>
 </div> : <p>⌛️ Loading....</p>
       

@@ -9,6 +9,9 @@ export const FILTER_BY_ACT = 'FILTER_BY_ACT';
 export const GET_ACTIVITIES= 'GET_ACTIVITIES';
 export const GET_DETAILS = 'GET_DETAILS';
 export const CLEAN_DETAIL= 'CLEAN_DETAIL';
+export const POST_ACTIVITIES = 'POST_ACTIVITIES';
+export const FILTER_ACTIVITIES = 'FILTER_ACTIVITIES';
+
 
 export function getCountries(){
     return async function(dispatch){ 
@@ -102,3 +105,30 @@ export function cleanDetail (payload){
         payload
     }
 }
+
+//postAct para el form:
+export function postAct(payload){
+return async function (){
+    var response = await axios.post('http://localhost:3001/', payload) //lo que me llega al front
+    return response;
+};
+}
+
+//----activities------
+export function getActivities(){
+    return async function(dispatch){
+        var getAct = await axios.get('http://localhost:3001/activities')
+        return dispatch({
+            type: GET_ACTIVITIES,
+            payload: getAct.data
+     })
+    }
+}
+
+//---------------- filter activities----------
+export function filterActivities(payload){
+    return{
+      type: FILTER_ACTIVITIES,
+      payload
+    }
+  }
