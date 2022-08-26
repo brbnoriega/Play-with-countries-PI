@@ -43,7 +43,7 @@ const countriesRoutes = Router();
 countriesRoutes.get('/countries', async(req,res)=>{
 
     restDb()
-    const contrydb = await Country.findAll()
+    const contrydb = await Country.findAll({include: {model: Activity}})
 
 
 // [ ] GET /countries?name="...":

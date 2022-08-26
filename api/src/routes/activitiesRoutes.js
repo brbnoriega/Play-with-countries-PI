@@ -23,7 +23,6 @@ try{
         difficulty: difficulty,
         duration: duration,
         season: season,
-        
     })
 
     let actAndCountry = await Country.findAll({
@@ -37,10 +36,20 @@ try{
 }catch(error) {
     res.status(404).send('Not created :(')
 }
-
 });
 
+activityRouter.get('/activities', async(req, res)=>{
+const act = await Activity.findAll()
+try{
+
+   res.send(act)
+
+} catch(error){
+    console.log(error)
+}
 
 
+
+});
 
 module.exports = activityRouter;
