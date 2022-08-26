@@ -23,5 +23,17 @@
 }
 
 .button{
-
+   
+        position: absolute;
+        color: rgb(15, 26, 26);
+        background-color:rgba(255, 255, 255, 0.116);
+        border:1px solid rgb(226, 212, 212);    
+        height:100px;
+        border-radius:50%;
+        -moz-border-radius:50%;
+        -webkit-border-radius:50%;
+        width:100px;
+        margin-left: 20px;
+    
+    
 }

@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Inconsolata:wght@200;400&family=Montserrat:ital,wght@0,100;1,100&family=Silkscreen&display=swap');
 
 .background{
     background: url('landing.jpg');
@@ -8,25 +8,18 @@
     left: 0px;
     top: 0px;
     position:fixed; 
-    top:0px ;
-  
-  
-   
-   
+    top:0px ; 
 }
 
-
 .title{
- 
+  font-family: 'Aboreto', cursive;
     font-size: 40px;
     text-align: center;
     margin-left: 1%;
-    color: hsla(90, 25%, 14%, 0.664);
+    color: hsla(90, 25%, 14%, 0.753);
     margin-top: 8%;
- 
+
 }
-
-
 
 .button {
 margin-left: 640px;
@@ -36,12 +29,12 @@ margin-left: 640px;
   border: 1px solid #a1755d;
   border-radius: 8px;
   background: #ffc09977;
-
+  font-family: 'Montserrat', sans-serif;
   -webkit-box-shadow: #ffc8a094 0px 0px 40px 0px;
   -moz-box-shadow: #ffc8a05e 0px 0px 40px 0px;
   box-shadow: #ffc8a093 0px 0px 40px 0px;
   text-shadow: #735443 1px 1px 1px;
-  font: italic normal bold 18px trebuchet ms;
+ 
   color: #ffffff9f;
   text-decoration: none;
 }

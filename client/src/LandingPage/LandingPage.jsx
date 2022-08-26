@@ -8,7 +8,7 @@ export default function LandingPage(){
  
          <div className={styles.background}>
       
-            <h1 className={styles.title}>🌏Travel with Flags🌎</h1>
+            <h1 className={styles.title}>Travel with Flags</h1>
        
 
             <Link to= '/home'>

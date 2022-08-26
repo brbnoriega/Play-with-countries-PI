@@ -17,7 +17,7 @@ export default function Home(){
     //------PAGINADO(readme: 10 por pag)------------------------------------------------------------------------------
     const[pag, setCurrentPage]= useState(1)// 
     
-    const [reload, setReload] = useState({continent:"", sort: ""}) // objeto porque son VARIOS
+    const [reload, setReload] = useState({continent:"", sort: "", population:"", activities:""}) // objeto porque son VARIOS
     const[coutriesPerPage, setCountriesPerPage] = useState(10) //cant x pag 
    
     const max = Math.ceil(allCountries.length / coutriesPerPage); //max array de countries / la cant de countries por pag 
@@ -48,10 +48,10 @@ export default function Home(){
             sort.preventDefault()
              dispatch(sortNames(sort.target.value))// se ejecuta y toma como payload el valor del click del usuario
             setOrder(`Order by abc : ${sort.target.value}`)    
+            setReload({sort: sort.target.value})
           }
 
     //----filtrado Continent-------
-      
         function handleContinent(continent) {
             continent.preventDefault();
             dispatch(filterContinent(continent.target.value));
@@ -65,6 +65,7 @@ export default function Home(){
         population.preventDefault();
         dispatch(sortPopulation(population.target.value))
         setOrder(`Order by population : ${population.target.value}`)  
+        setReload({population: population.target.value})
     }
 
  //----- Filter activitiers----
@@ -73,19 +74,30 @@ export default function Home(){
     activities.preventDefault();
     dispatch(filterActivities(activities.target.value))
     setOrder(`Order by activities : ${activities.target.value}`)  
+    setReload({activities: activities.target.value})
  }
 
 return(
-
-    
 <> 
- <SearchBar setReload={setReload}/>    {/*lo mando a searchbar */}
+ <SearchBar setReload={setReload} 
+   setCurrentPage={setCurrentPage} 
+   />    {/*lo mando a searchbar */}
     {/* sort */}  
     <div className={styles.optionStyle}>
+
+  <div>
+     <Paginado  className={styles.paginadoStyle} 
+                      pag={pag}
+                      setCurrentPage={setCurrentPage} 
+                      max={max}
+                  />
+  </div>
+           
+    
         <div >      
-        <label>Alphabetical order</label>
-        <select  onChange={sort=>handleSort(sort)} >
-                <option hidden value={reload.sort}>Sort</option> 
+        <label className={styles.font}>Sort Countries </label>
+        <select value={reload.sort} onChange={sort=>handleSort(sort)} >
+                <option hidden value="">⇅</option> 
                 <option value='az'>Top down A-Z</option> 
                 <option value='za'>Bottom up Z-A</option>
         </select>
@@ -93,9 +105,9 @@ return(
 
        {/*---- filter continents----- */}
     <div >
-            <label>All Continents</label>
+            <label className={styles.font}>Continents </label>
             <select value={reload.continent} onChange={continent=>handleContinent(continent)}>
-            <option hidden value=''> All Continents </option>
+            <option hidden value=''> All</option>
             <option value="Asia"> Asia </option>
             <option value="North America">North America</option>
             <option value="Africa">Africa</option>
@@ -108,30 +120,24 @@ return(
     </div>
         {/*----- filter population----- */}
     <div >
-            <label>Population</label>
-            <select onChange={population=>handlePopulation(population)}>
-            <option hidden value=""> Population </option>
+            <label className={styles.font}>Population </label>
+            <select value={reload.population} onChange={population=>handlePopulation(population)}>
+            <option hidden value=""> ⇅ </option>
             <option value="asc">Ascending</option>
             <option value="desc">Descending</option>
           </select>
     </div>
-    </div>
+    
             {/*----- activities----- */}
-            <label>Activities</label>
-            <select onChange ={activities=>handleActivities(activities)}  id="">
-            <option hidden value=""> Activities</option>
-           {activities?.map(actMap=>(<option value={actMap.name}> {actMap.name}</option>) )}
-
-               
-            </select>
-    {/* -----Paginado----- */}
             <div>
-        <Paginado   
-            pag={pag}
-            setCurrentPage={setCurrentPage} 
-            max={max}
-        />
-        </div>
+            <label className={styles.font}>Activities </label>
+            <select value={reload.activities}onChange ={activities=>handleActivities(activities)}  id="">
+            <option hidden value=""> All</option>
+           {activities?.map(actMap=>(<option value={actMap.name}> {actMap.name}</option>) )}
+           </select>
+
+            </div>
+            </div>
         
 {/* ----cards------ */}
 

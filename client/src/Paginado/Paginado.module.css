@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Inconsolata:wght@200;400&family=Montserrat:ital,wght@0,100;1,100&family=Silkscreen&display=swap');
+.stylePaginado{
+  
+
+
+	
+
+    font-family: 'Montserrat', sans-serif;
+   
+	font-size:15px;
+	font-weight:bold;
+
+    align-items: center;
+	justify-items: center;
+    position: center;
+}
+
+.arrow{
+   margin: 5px;
+
+}
+
+.arrow:hover{
+	background-color: rgb(186, 194, 186);
+    color: aliceblue;
+    font-size:15px;
+   
+}
