@@ -108,58 +108,62 @@ export default function ActivitiesCreate(){
                 <h1 className={styles.title}>Be a Creator</h1>
                 <h4 className={styles.subtitle}>Your own Activity Turist</h4>
         <div className={styles.boxForm}>  
-        <form onSubmit={(e)=> handleSubmit(e)}>
+        <form  onSubmit={(e)=> handleSubmit(e)}>
                 
-        <div>
-        <label>Activity name </label>
-        <input name="name" type="text" placeholder="Please write a name..." onChange={(e)=>handleChange(e)}/> 
+        <div className={styles.formStyle}>
+        <label className={styles.fontBoxtitles}>Activity name </label><br />
+        <input className={styles.fontBox} name="name" type="text" placeholder="Please write a name..." onChange={(e)=>handleChange(e)}/> 
         {error.name && (
-             <label > {error.name}</label>
+             <label className={styles.fontBox}> {error.name}</label>
           )}
-        <br />  
+        <br />  <br />
         
       {/*onChange evento de cambio --> trae info del input */}
         {/* ----------- */}
-        <label>Duration </label>
-        <input name="duration" type="number" placeholder="Hours..." min={1} max={24}  onChange={(e)=>handleChange(e)}/><br />
+        <label className={styles.fontBoxtitles}>Duration </label><br />
+        <input className={styles.fontBox} name="duration" type="number" placeholder="Hours..." min={1} max={24}  onChange={(e)=>handleChange(e)}/><br /><br />
         {/* ----------- */}
-        <label>Difficulty </label>
-        <select name="difficulty" onChange={(e)=>handleChange(e)}> <br/>
-        <option hidden value="">Select the difficulty</option>
-        <option value="1">Too Easy</option>
-        <option value="2">Easy</option>
-        <option value="3">Medium</option>
-        <option value="4">Hard </option>
-        <option value="5">Very Hard</option>
-        </select><br />
+        <label className={styles.fontBoxtitles}>Difficulty </label><br />
+        <select className={styles.fontBox} name="difficulty" onChange={(e)=>handleChange(e)}> <br/>
+        <option hidden value="">Select a difficulty</option>
+        <option className={styles.fontBox} value="1">Too Easy</option>
+        <option className={styles.fontBox} value="2">Easy</option>
+        <option className={styles.fontBox} value="3">Medium</option>
+        <option className={styles.fontBox} value="4">Hard </option>
+        <option className={styles.fontBox} value="5">Very Hard</option>
+        </select><br /><br />
         {/* ----------- */}
-        <label>Season </label>
-        <select  name='season' type='text' onChange={(e)=>handleChange(e)}>  {/*onChange ---handleSeason  */}
-        <option hidden value=""> Select the season </option>
-        <option value="Summer">Summer</option>
-        <option value="Autumn">Autumn</option>
-        <option value="Winter">Winter</option>
-        <option value="Spring">Spring</option>
-        </select><br />
+        <label className={styles.fontBoxtitles}>Season </label><br />
+        <select className={styles.fontBox} name='season' type='text' onChange={(e)=>handleChange(e)}>  {/*onChange ---handleSeason  */}
+        <option className={styles.fontBox} hidden value=""> Select a season </option>
+        <option className={styles.fontBox} value="Summer">Summer</option>
+        <option className={styles.fontBox} value="Autumn">Autumn</option>
+        <option className={styles.fontBox} value="Winter">Winter</option>
+        <option className={styles.fontBox} value="Spring">Spring</option>
+        </select><br /><br />
         {/* ----------- */}
-        <label>Countries: </label>
-        <select name="countries" onChange={(e)=> handleSelect(e)}>
-        <option hidden value="">Countries to practice this activity...</option>
+        <label className={styles.fontBoxtitles}>Countries: </label><br />
+        <select className={styles.fontBox} name="countries" onChange={(e)=> handleSelect(e)}> 
+        <option hidden value="">Activity place...</option>
         {
         allCountries.map(e => {
         return(
-        <option value={e.name} key={e.id}>{e.name}</option>
+        <option className={styles.fontBox} value={e.name} key={e.id}>{e.name}</option>
         )
         })
         }
-        </select> <br />              
+        </select>         <br />
+         
         {activities.countries.map(countriesMap=> {return (
         <>
-        <button type="button" value={countriesMap} onClick={(e)=> handleClean(e)}>x</button> <label> {countriesMap}</label><br />
+        <button type="button" value={countriesMap} className={styles.buttonAct} onClick={(e)=> handleClean(e)}>x</button> <label> {countriesMap}</label><br />
          </>
-        )})}  <br/><br />
+        )})}  <br/>
+        
+
+
         </div>
-        <button type="submit">Create Activity</button>
+        <button type="submit" className={styles.createButton}>Create Activity</button> <br />
 
         </form>
         </div>          

@@ -1,29 +1,18 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Inconsolata:wght@200;400&family=Montserrat:ital,wght@0,100;1,100&family=Silkscreen&display=swap');
 .card {
-
-
 	display: grid;
-	 
-
 	align-items: center;
 	justify-items: center;
-
-
 	width: 320px;
 	height: 330px;
 	background: rgba(217, 217, 217, 0.17);
 	border-radius: 65px;
 	transform: rotate(0.42deg);
-	
-
-
+	text-decoration: none;
 	/* display: inline-block;
-
-
 	height: 300px;
 	max-width: 20%;
 	margin: 10px;
-
 	text-decoration: none;
 	overflow: hidden;
 	box-shadow: 0 0 3rem -1rem rgba(0,0,0,0.5);
@@ -34,33 +23,30 @@
 	transform: translateY(-0.5rem) scale(1.0125);
 	
 } 
-
-
 .img{
     border-radius: 15px;
 	position: fixed;
     height: 150px;
     width: 270px;
-
 } 
 
 .font{
+	font-family: 'Aboreto', cursive;
 	position:absolute;
 	text-align: center;
-
 	padding-left: 30px;
 	padding-right: 30px;
 	top: 3%;
+	color: blanchedalmond;
 	
-
 }
 
 .fontContinent{
 	position:absolute;
 	text-align: center;
-
 	padding-left: 30px;
 	padding-right: 30px;
 	bottom: 1%;
-
+	font-family: 'Montserrat', sans-serif;
+	color: rgb(212, 200, 182);
 }

@@ -17,7 +17,7 @@ export default function Home(){
     //------PAGINADO(readme: 10 por pag)------------------------------------------------------------------------------
     const[pag, setCurrentPage]= useState(1)// 
     
-    const [reload, setReload] = useState({continent:"", sort: "", population:"", activities:""}) // objeto porque son VARIOS
+    const [reload, setReload] = useState({continent:"", sort: "", population:"", activities:"", search:""}) // objeto porque son VARIOS
     const[coutriesPerPage, setCountriesPerPage] = useState(10) //cant x pag 
    
     const max = Math.ceil(allCountries.length / coutriesPerPage); //max array de countries / la cant de countries por pag 
@@ -81,6 +81,7 @@ return(
 <> 
  <SearchBar setReload={setReload} 
    setCurrentPage={setCurrentPage} 
+   reload={reload}
    />    {/*lo mando a searchbar */}
     {/* sort */}  
     <div className={styles.optionStyle}>
@@ -96,44 +97,44 @@ return(
     
         <div >      
         <label className={styles.font}>Sort Countries </label>
-        <select value={reload.sort} onChange={sort=>handleSort(sort)} >
+        <select className={styles.selectOrder} value={reload.sort} onChange={sort=>handleSort(sort)} >
                 <option hidden value="">⇅</option> 
-                <option value='az'>Top down A-Z</option> 
-                <option value='za'>Bottom up Z-A</option>
+                <option className={styles.selectOrder} value='az'>A-Z</option> 
+                <option className={styles.selectOrder} value='za'>Z-A</option>
         </select>
     </div>
 
        {/*---- filter continents----- */}
     <div >
             <label className={styles.font}>Continents </label>
-            <select value={reload.continent} onChange={continent=>handleContinent(continent)}>
+            <select className={styles.selectOrder} value={reload.continent} onChange={continent=>handleContinent(continent)}>
             <option hidden value=''> All</option>
-            <option value="Asia"> Asia </option>
-            <option value="North America">North America</option>
-            <option value="Africa">Africa</option>
-            <option value="Antarctica">Antarctica</option>
-            <option value="Europe">Europe</option>
-            <option value="Oceania">Oceania</option>
-            <option value="South America">South America</option>
+            <option className={styles.selectOrder} value="Asia"> Asia </option>
+            <option className={styles.selectOrder} value="North America">North America</option>
+            <option className={styles.selectOrder} value="Africa">Africa</option>
+            <option className={styles.selectOrder} value="Antarctica">Antarctica</option>
+            <option className={styles.selectOrder} value="Europe">Europe</option>
+            <option className={styles.selectOrder} value="Oceania">Oceania</option>
+            <option className={styles.selectOrder} value="South America">South America</option>
             </select>       
                 
     </div>
         {/*----- filter population----- */}
     <div >
             <label className={styles.font}>Population </label>
-            <select value={reload.population} onChange={population=>handlePopulation(population)}>
+            <select className={styles.selectOrder} value={reload.population} onChange={population=>handlePopulation(population)}>
             <option hidden value=""> ⇅ </option>
-            <option value="asc">Ascending</option>
-            <option value="desc">Descending</option>
+            <option className={styles.selectOrder} value="asc">Ascending</option>
+            <option className={styles.selectOrder} value="desc">Descending</option>
           </select>
     </div>
     
             {/*----- activities----- */}
             <div>
             <label className={styles.font}>Activities </label>
-            <select value={reload.activities}onChange ={activities=>handleActivities(activities)}  id="">
-            <option hidden value=""> All</option>
-           {activities?.map(actMap=>(<option value={actMap.name}> {actMap.name}</option>) )}
+            <select className={styles.selectOrder} value={reload.activities}onChange ={activities=>handleActivities(activities)}  id="">
+            <option className={styles.selectOrder} hidden value=""> All</option>
+           {activities?.map(actMap=>(<option className={styles.selectOrder} value={actMap.name}> {actMap.name}</option>) )}
            </select>
 
             </div>

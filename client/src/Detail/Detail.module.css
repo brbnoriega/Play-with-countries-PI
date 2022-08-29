@@ -1,25 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Inconsolata:wght@200;400&family=Montserrat:ital,wght@0,100;1,100&family=Silkscreen&display=swap');
+
+.background{
+    background-color: rgb(44, 39, 39);
+
+width: 100%;
+    position: absolute;
+
+   
+
+
+
+}
+
 .img{
     border-radius: 15px;
-    height: 150px;
-    width: 270px;
-
+    height: 100px;
+    width: 150px;  
+    margin-left: 35%;
+ 
 } 
 
 .boxCard{
-    
-	align-items: center;
-	justify-items: center;
-    margin-left: 40%;
-    margin-right: 40%;
+ 
     margin-bottom: 60%;
-	width: auto;
-	height: auto;
+margin-left: 33%;
+
 	background: rgba(217, 217, 217, 0.17);
-    margin: 0 auto;
-    text-align: center;
+
     border-radius: 10px;
     border: 1px solid #666666;
+    width: 50%;
+    height: 10%;
+    font-weight:bold; 
+    font-family: 'Montserrat', sans-serif;
+
     width: 500px;
+    overflow:auto;
+    height: auto;
 }
 
 .button{
@@ -34,6 +51,81 @@
         -webkit-border-radius:50%;
         width:100px;
         margin-left: 20px;
-    
-    
 }
+
+.title{
+    font-family: 'Aboreto', cursive;
+    color: #585756;
+    align-items: center;
+	justify-items: center;
+    text-align: center;
+
+    font-family: 'Aboreto', cursive;
+    color: blanchedalmond;
+}
+
+.font{
+    
+    align-items: center;
+	justify-items: center;
+    text-align: center;
+
+    font-family: 'Montserrat', sans-serif;
+  
+    color: rgb(212, 200, 182);
+}
+
+.backbutton{
+    position: absolute;
+    color: rgb(15, 26, 26);
+    background-color:rgba(255, 255, 255, 0.116);
+    border:1px solid rgb(226, 212, 212);    
+    height:60px;
+    margin-top: 2%;
+    border-radius:50%;
+    /* -moz-border-radius:50%; */
+    /* -webkit-border-radius:50%; */
+    width:100px;
+    margin-left: 20px;
+    color: #ebe5db;
+    border-radius: 22px;
+    -webkit-box-shadow: #ffc8a094 0px 0px 40px 0px;
+    -moz-box-shadow: #ffc8a05e 0px 0px 40px 0px;
+    box-shadow: #ffc8a093 0px 0px 40px 0px;
+    text-shadow: #735443 1px 1px 1px;
+}
+
+.backbutton:hover,
+.backbutton:focus {
+border: 1px solid #2c231d;
+background: #e9e5df;
+background: linear-gradient(to bottom, #f7f3eb, #dbd3d3);
+color: #ffc09977;
+text-decoration: none;
+    }
+
+
+    .boxTwo{
+        background: rgba(217, 217, 217, 0.17);
+ 
+    border-radius: 20px;
+    border: 1px solid #666666;
+    width: 300px;
+    font-weight:bold; 
+    font-family: 'Montserrat', sans-serif;
+ margin-top: 0%;
+
+
+ font-family: 'Montserrat', sans-serif;
+	color: rgb(212, 200, 182);
+    }
+
+    .cardAct{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        grid-gap: 2rem;
+        margin-block: 2rem;
+        padding: 0 1rem;
+        justify-items: center;
+        align-items: center;
+    }

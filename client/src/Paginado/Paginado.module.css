@@ -4,25 +4,44 @@
 
 
 	
+    
+ 
 
     font-family: 'Montserrat', sans-serif;
-   
+   border-color: #735443;
 	font-size:15px;
 	font-weight:bold;
 
     align-items: center;
 	justify-items: center;
     position: center;
+
+   
 }
 
 .arrow{
    margin: 5px;
+   color: rgba(72, 72, 73, 0.658);
+   -webkit-box-shadow: #ebe4e094 0px 0px 40px 0px;
+   -moz-box-shadow: #ebe1d95e 0px 0px 40px 0px;
+   
+background-color: rgba(248, 245, 245, 0.692);
+   border-color: rgb(158, 156, 156);
 
+   border-radius: 33%;
 }
 
+
+
 .arrow:hover{
-	background-color: rgb(186, 194, 186);
-    color: aliceblue;
-    font-size:15px;
-   
+    
+    border: 1px solid #f3efed77;
+    background: #f7f2ef77;
+    background: linear-gradient(to bottom, #4e4c48, #444242);
+    color: #e4e2e1;
+    text-decoration: none;
+    
+
+  
+
 }
