@@ -52,4 +52,26 @@ try{
 
 });
 
+
+
+//probando ruta delete:
+
+activityRouter.delete('/activities/:name', async(req, res)=>{
+   const {name} = req.params
+    try{
+    
+        if(name){
+            Activity.destroy({where: {name: name}})
+        }
+       res.send('We delete that activity')
+    
+    } catch(error){
+        console.log('Deleited')
+    }
+    
+    
+    
+    });
+
+
 module.exports = activityRouter;
