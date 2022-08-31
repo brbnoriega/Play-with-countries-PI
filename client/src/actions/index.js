@@ -13,6 +13,8 @@ export const POST_ACTIVITIES = 'POST_ACTIVITIES';
 export const FILTER_ACTIVITIES = 'FILTER_ACTIVITIES';
 
 
+export const TEST_FILTER = 'TEST_FILTER';
+
 export function getCountries(){
     return async function(dispatch){ 
         // try{
@@ -130,5 +132,12 @@ export function filterActivities(payload){
     return{
       type: FILTER_ACTIVITIES,
       payload
+    }
+  }
+
+  export function filterCapital(payload){
+    return{
+        type: TEST_FILTER,
+        payload
     }
   }

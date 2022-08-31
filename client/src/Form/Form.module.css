@@ -51,7 +51,17 @@ height: 100%;
     font-weight:bold;
     width: 139px;
     height: auto;
- 
+   
+}
+
+.fontMens{
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bold;
+    color: #e29f9f;
+   
+   
+    
+    text-shadow: #734343 1px 1px 1px;
 }
 
 .backbutton{

@@ -13,7 +13,7 @@ function App() {
           <Route path= '/activities' component={ActivitiesCreate}/> 
           <Route path='/countries/:id' component={Detail}/>
       </Switch>
-    </BrowserRouter>
+    </BrowserRouter> 
   );
 }
 

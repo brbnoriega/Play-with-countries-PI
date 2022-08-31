@@ -6,7 +6,7 @@ import styles from '../Cards/Cards.module.css'
 //exporto por default + destructurimg 
     export default function Cards ({name, imgFlag, continent, id}) { 
         return (
-     <Link to= {'/countries/'+ id}>
+     <Link to= {'/countries/'+ id} >
           <div className={styles.card}>
           <h3 className={styles.font}>{name}</h3> 
 

@@ -3,11 +3,14 @@ import {Link} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import { getDetail, cleanDetail } from "../actions/index";
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import styles from '../Detail/Detail.module.css';
-//const {id} =useParams()
 
-export default function Detail(props){
+
+export default function Detail(){
+  
     // console.log(props)
+    const {id} = useParams()
     const dispatch = useDispatch()
 
     const formatNumber = (num) => {
@@ -18,7 +21,7 @@ export default function Detail(props){
 
 
     useEffect(()=>{
-    dispatch(getDetail(props.match.params.id)) // accedo al id del detalle
+    dispatch(getDetail(id)) // accedo al id del detalle
 
     return()=>{// clean de lo que habia----> ONMOUTH --->desmonta componente
         dispatch(cleanDetail([])); // despacha la accion de clean y retorna un array vacio
@@ -39,7 +42,7 @@ return(
 
 
         <div className={styles.boxCard}>
-                <h3 className={styles.title}>Country Code: {countries.id}</h3> {/* key={id} */}
+                <h3 className={styles.title}>Country Code: {countries.id}</h3> 
                 <img className={styles.img} src={countries.imgFlag} alt={countries.name} />
                  <h3 className={styles.title}>{countries.name.toUpperCase()}</h3>
                 <h3  className={styles.font}>Capital: {countries.capital}</h3>
@@ -63,7 +66,10 @@ return(
     
      )
                    
-                   ): <h4 className={styles.font}> Without tourist activity</h4> } </div>
+                   ): <h4 className={styles.font}> Without tourist activity 
+                   
+                  <br /><br /> <Link to='/activities'><button className={styles.createButton}> Create Activity</button></Link>
+                  </h4> } </div>
 
                      
 </div>

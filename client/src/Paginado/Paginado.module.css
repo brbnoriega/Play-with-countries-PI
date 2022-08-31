@@ -4,7 +4,7 @@
 
 
 	
-    
+
  
 
     font-family: 'Montserrat', sans-serif;
@@ -44,4 +44,8 @@ background-color: rgba(248, 245, 245, 0.692);
 
   
 
+}
+
+.err{
+    color: #e4e2e1;
 }

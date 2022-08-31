@@ -56,7 +56,7 @@ export default function ActivitiesCreate(){
 
         setErr(validate({ //validate name
         ...activities,
-        [e.target.name]: e.target.value
+        [e.target.name]: e.target.value //'Pardon, that is not a name!'
         }));
 
         setAct({ 
@@ -71,7 +71,13 @@ export default function ActivitiesCreate(){
                 if(activities.name === '' || activities.duration === '' || activities.difficulty === '' || activities.season ===  '' || 
                 activities.countries.length === 0){
                         alert('You have to field the form!')
-                }else{
+                }else if(error.name){
+                        alert('Error')
+                        console.log(error.name)
+                }
+                
+                
+                else{
                 e.preventDefault();
                 dispatch(postAct(activities))
                  alert("Your activities is Create it!")
@@ -100,21 +106,19 @@ export default function ActivitiesCreate(){
                 })
               }
        
-
-
         return(
         <div className={styles.background}>
                 <Link to= '/home'><button className={styles.backbutton}>⟵</button></Link> 
                 <h1 className={styles.title}>Be a Creator</h1>
                 <h4 className={styles.subtitle}>Your own Activity Turist</h4>
         <div className={styles.boxForm}>  
-        <form  onSubmit={(e)=> handleSubmit(e)}>
+        <form onSubmit={(e)=> handleSubmit(e)}>
                 
         <div className={styles.formStyle}>
         <label className={styles.fontBoxtitles}>Activity name </label><br />
         <input className={styles.fontBox} name="name" type="text" placeholder="Please write a name..." onChange={(e)=>handleChange(e)}/> 
         {error.name && (
-             <label className={styles.fontBox}> {error.name}</label>
+             <label className={styles.fontMens}><br />{error.name}</label>
           )}
         <br />  <br />
         

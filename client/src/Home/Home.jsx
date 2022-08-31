@@ -1,7 +1,7 @@
 import React from "react";
 import {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import{getCountries, sortNames, filterContinent, sortPopulation, getActivities, filterActivities } from '../actions/index.js'
+import{getCountries, sortNames, filterContinent, sortPopulation, getActivities, filterActivities, filterCapital } from '../actions/index.js'
 import Paginado from "../Paginado/Paginado.jsx";
 
 import Cards from '../Cards/Cards.jsx';
@@ -57,8 +57,16 @@ export default function Home(){
             dispatch(filterContinent(continent.target.value));
             setOrder(`Order by continent : ${continent.target.value}`)  
             setReload({continent: continent.target.value})
+            setCurrentPage(1)
          }
 
+         function handleCapital (capital){
+            capital.preventDefault();
+            dispatch(filterCapital(capital.target.value)); 
+            // setOrder(`Order by capital : ${capital.target.value}`)  
+            // setReload({capital: capital.target.value})
+            // setCurrentPage(1)                                                                                                                                                                                                          
+         }
     //----sort population-------
 
     function handlePopulation (population){
@@ -75,6 +83,7 @@ export default function Home(){
     dispatch(filterActivities(activities.target.value))
     setOrder(`Order by activities : ${activities.target.value}`)  
     setReload({activities: activities.target.value})
+    setCurrentPage(1)
  }
 
 return(
@@ -138,6 +147,17 @@ return(
            </select>
 
             </div>
+            </div>
+
+
+            {/* FILTER TEST */}
+            <div>
+                <label>Capitals</label>
+                <select onChange={capital=> handleCapital (capital)}>
+                <option hidden value="allCapital">All</option>
+                      {allCountries?.map(mapeo=>(<option value={mapeo.capital} >{mapeo.capital}</option>))}
+                </select>
+              
             </div>
         
 {/* ----cards------ */}
