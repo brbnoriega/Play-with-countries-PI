@@ -55,7 +55,6 @@ try{
 
 
 //probando ruta delete:
-
 activityRouter.delete('/activities/:name', async(req, res)=>{
    const {name} = req.params
     try{
@@ -66,12 +65,32 @@ activityRouter.delete('/activities/:name', async(req, res)=>{
        res.send('We delete that activity')
     
     } catch(error){
-        console.log('Deleited')
+        console.log('Deleted')
     }
     
-    
-    
     });
+
+
+
+
+//probando ruta put:
+activityRouter.put('/activities/:id', async(req, res)=>{
+    const {id} = req.params;
+    const act = req.body;
+     try{
+     
+         if(id){
+            const bkUpdate = await Activity.update(act,{where: {id: id }})
+             
+         }
+        // res.json({change: true})
+        res.send('Changed relese')
+     
+     } catch(error){
+         console.log('changed fail')
+     }
+     
+     });
 
 
 module.exports = activityRouter;
